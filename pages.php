@@ -16,17 +16,17 @@
         <h1> Business computer department </h1>
       </div>
       <ul class="menu">
-        <li>
-          <a href="http://localhost/เล่นๆ/index.php">Home</a>
+      <li>
+          <a href="http://localhost/web/index.php">Home</a>
         </li>
         <li>
-          <a href="http://localhost/เล่นๆ/new.php">News</a>
+          <a href="http://localhost/web/new.php">News</a>
         </li>
         <li>
-          <a href="http://localhost/เล่นๆ/tether.php">Personnel</a>
+          <a href="http://localhost/web/tether.php">Personnel</a>
         </li>
         <li>
-          <a href="http://localhost/เล่นๆ/admin/login.php">Log in</a>
+          <a href="http://localhost/web/login.php">Log in</a>
         </li>
       </ul>
     </div>

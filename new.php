@@ -17,19 +17,19 @@
             <h1> Business computer department </h1>
           </div>
           <ul class="menu">
-            <li>
-              <a href="http://localhost/exd/index.php">Home</a>
-            </li>
-            <li>
-              <a href="http://localhost/exd/new.php">News</a>
-            </li>
-            <li>
-              <a href="http://localhost/exd/tether.php">Personnel</a> 
-            </li>
-            <li>
-              <a href="http://localhost/exd/admin/login.php">Log in</a>
-            </li>
-          </ul>
+          <li>
+          <a href="http://localhost/web/index.php">Home</a>
+        </li>
+        <li>
+          <a href="http://localhost/web/new.php">News</a>
+        </li>
+        <li>
+          <a href="http://localhost/web/tether.php">Personnel</a>
+        </li>
+        <li>
+          <a href="http://localhost/web/login.php">Log in</a>
+        </li>
+      </ul>
         </div>
       </div>      
       
@@ -74,9 +74,6 @@
         </form>
     </header>
       <div class="ddd"></div>
-
-      
-    
     <session class="content">
         <div class="container">
 

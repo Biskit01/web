@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Business computer department</title>
-
+  
   <link href="https://fonts.googleapis.com/css?family=Prompt&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="sss.css">
   
@@ -31,20 +31,24 @@
           <a href="http://localhost/web/tether.php">Personnel</a>
         </li>
         <li>
-          <a href="http://localhost/web/login.php">Log in</a>
+          <a href="http://localhost/web/admin/login.php">Log in</a>
         </li>
       </ul>
     </div>
   </div>
 
-  <div class="clearfix"></div>
+  <div class="clearfix">
+    
+  </div>
 
   <header class="header">
     <div class="container">
       <div class="header_area">
-        <h1>ยินดีต้อนรับเข้าสู่เว็บไซต์<br>แผนกคอมพิวเตอร์ธุรกิจ</br></h1>
+        <h1>ยินดีต้อนรับเข้าสู่เว็บไซต์</h1>
+        <h1>ระบบสารสนเทศ</h1>
+        <h1>วิชาโครงการและวิชาโครวการ</h1>
         <h4>
-          <font color=" #ffec48;">วิทยาลัยอาชีวศึกษานครศรีธรรมราช</font>
+          <font color=" #ffec48;">แผนกวิชาเทคโนโลยีธุรกิจดิทัล</font>
         </h4>
         
         <form  class="ac" action="search.php" method="get" enctype="multipart/form-data">
