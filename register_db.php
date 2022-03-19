@@ -48,7 +48,7 @@
 
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "You are now logged in";
-            header('location: profile.php');
+            header('location: admin/index.php');
         } else {
             header("location: register.php");
         }

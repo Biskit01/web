@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php require_once"connect.php" ?>
 <html lang="en">
 <head>
 <title>Streets'ver</title>
@@ -13,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
 <style type="text/css">
 body,td,th {
     font-family: Poppins, sans-serif;
@@ -21,9 +23,23 @@ body {
     background-image: url(images/Isopoly_01.gif);
 }
 </style>
-</head>
-<body>
 
+
+<body>
+<?php 
+            
+			$select_posts = "SELECT * FROM posts";
+
+			$run_posts = mysqli_query($conn, $select_posts);
+
+			while ($row = mysqli_fetch_array($run_posts)) {
+				$post_id = $row['post_id'];
+				$post_date = $row['post_date'];
+				$post_author = $row['post_author'];
+				$post_title = $row['post_title'];
+				$post_image = $row['post_image'];
+				$post_content = substr($row['post_content'], 0, 300);               
+		?>
 <div class="super_container">
 
 	
@@ -110,7 +126,7 @@ body {
 				
 				<!-- Slider Item -->
 				<div class="owl-item home_slider_item">
-					<div class="home_slider_background" style="img/<?php echo $post_image; ?>"></div>
+					<div class="home_slider_background" style="background-image:url(imag/home_slider_3.png)"></div>
 					<div class="home_slider_content_container">
 						<div class="container">
 							<div class="row">
@@ -201,10 +217,10 @@ body {
 
 						<!-- Product -->
 						<div class="product">
-							<div class="product_image"><img src="img/product_1.png" alt=""></div>
+							<div class="product_image"><img src="img/<?php echo $post_image; ?>" alt=""></div>
 							<div class="product_extra product_new"><a href="categories.html">New</a></div>
 							<div class="product_content">
-								<div class="product_title"><a href="1.html">ธีมน้องหมี สุดฮิตตลอดกาล </a></div>
+								<div class="product_title"><a href="1.html"><?php echo $post_title; ?></a></div>
 								<div class="product_price">฿ 150.00</div>
 							</div>
 						</div>
@@ -261,7 +277,7 @@ body {
 
 						<!-- Product -->
 						<div class="product">
-							<div class="product_image"><img src="img/product_7.png" alt=""></div>
+							<div class="product_image"><img src="imag/product_7.png" alt=""></div>
 							<div class="product_content">
 								<div class="product_title"><a href="">Hoodie แนวสตรีทแฟชั่น
 									</a></div>
@@ -339,4 +355,4 @@ body {
 <script src="plugins/parallax-js-master/parallax.min.js"></script>
 <script src="js/custom.js"></script>
 </body>
-</html>
+<?php } ?>

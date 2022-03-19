@@ -25,13 +25,13 @@
           <a href="http://localhost/web/index.php">Home</a>
         </li>
         <li>
-          <a href="http://localhost/web/new.php">News</a>
+          <a href="http://localhost/web/1index.php">News</a>
         </li>
         <li>
           <a href="http://localhost/web/tether.php">Personnel</a>
         </li>
         <li>
-          <a href="http://localhost/web/admin/login.php">Log in</a>
+          <a href="http://localhost/web/login">Log in</a>
         </li>
       </ul>
     </div>

@@ -17,7 +17,7 @@
         <h1> Business computer department </h1>
       </div>
       <ul class="menu">
-      <li>
+         <li>
           <a href="http://localhost/web/index.php">Home</a>
         </li>
         <li>
