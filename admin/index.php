@@ -56,10 +56,28 @@
             <div class="showinfo">
                 <h1>Welcome to Admin Panel</h1>
 
-                <img width="640"  height="360" src="img/admin22.png" alt="">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                    <?php include 'includes/tweets.php'; ?>
+                        
+                  </div>
+                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <?php
+                       $tweets = $media_tweets;
+                       include 'includes/tweets.php'; ?>
+                    </div>
+                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                     
+                       <?php
+                       $tweets = $liked_tweets;
+                       include 'includes/tweets.php'; ?>
+                  
+                  </div>
+                  </div>
+            
             </div>
         </div>
-    </section>
 </body>
 </html>
 <?php } ?>

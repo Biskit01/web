@@ -1,0 +1,171 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  padding: 2rem;
+  font: normal 1rem/1.25 Verdana, sans-serif;
+  background-color: #F7F7F7;
+  word-wrap: normal;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.center-element {
+  margin: 1rem auto;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  * width: 90% exemplary, just customize it to your needs;
+  * flex-direction: formfields on top of each other;
+  * margin: 0 auto for centering the form.
+*/
+form {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1rem;
+  background-image: repeating-linear-gradient(45deg, rgba(255,204,204,.3), rgba(255,204,204,.3) 20px, rgba(255,255,255,.3) 20px, rgba(255,255,255,.3) 40px, rgba(206,230,242,.3) 40px, rgba(206,230,242,.3) 60px);
+  border: 5px solid #cee6f2;
+  border-image: repeating-linear-gradient( 45deg, rgba(255,204,204,.5), rgba(255,204,204,.5) 5%, rgba(255,255,255,.5) 5%, rgba(255,255,255,.5) 10%, rgba(206,230,242,.5) 10%, rgba(206,230,242,.5) 15%) 10;
+  color: #333;
+}
+
+/*
+  * flex-direction: labels above input and textarea on small screens.
+*/
+label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: .5rem;
+}
+
+/*
+  * flex-direction: labels before input and textarea on bigger screens;
+  * media: adjust the min-width to your needs.
+*/
+@media only screen and (min-width: 600px) {
+  label {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/*
+  * outline: none: remove the outline of the browser settings.
+*/
+input,
+textarea {
+  width: 100%;
+  margin-top: .25rem;
+  padding: .5rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  outline: none;
+  border: 1px solid #7f7f7f;
+  border-radius: .25rem;
+  color: #333;
+  transition: border .25s ease-in-out;
+}
+
+input:hover,
+textarea:hover,
+input:focus,
+textarea:focus {
+  border: 1px solid #fa8b8b;
+}
+
+/*
+  * width: making place for the labels before input and textarea on bigger screens.
+*/
+@media only screen and (min-width: 600px) {
+  input,
+  textarea {
+    width: 70%;
+    margin-top: 0;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  input,
+  textarea {
+    width: 80%;
+    font-size: 1.25rem;
+  }
+}
+
+/* Basic styles for the buttons */
+/*
+  * border: 0: remove the border of the browser settings;
+*/
+.btn {
+  padding: .75rem 1.25rem;
+  font: 700 1.1rem/1.2 Verdana, sans-serif;
+  letter-spacing: .05rem;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px rgba(77,77,77,.5);
+  background-color: transparent;
+  border: 0;
+  border-radius: .25rem;
+  color: #333;
+  transition: .5s;
+}
+
+/* Specific styles for the two buttons */
+/*
+  * box-shadow: instead of a border;
+    * the reason is: if you hover a border and the border-width will grow
+    * 'you will have an undesirable visual jump from layout shift since the border will briefly increase the dimensions in those states', see 'https://moderncss.dev/the-3-css-methods-for-adding-element-borders/';
+*/
+.btn-send,
+.btn-reset {
+  transition: box-shadow .25s ease-in-out;
+}
+
+.btn-send {
+  box-shadow: 0 0 2px 1px rgba(0,128,0,.5);
+}
+.btn-send:hover,
+.btn-send:focus {
+  box-shadow: 0 0 3px 2px rgba(0,128,0,.7);
+}
+.btn-send::after {
+  content: "\1F585";
+  margin-left: .25rem;
+  font-size: 1.25rem;
+  color: #333;
+}
+
+.btn-reset {
+  box-shadow: 0 0 2px 1px rgba(255,0,0,.5);
+}
+.btn-reset:hover,
+.btn-reset:focus {
+  box-shadow: 0 0 3px 2px rgba(255,0,0,.7);
+}
+.btn-reset::after {
+  content: "\21BA";
+  margin-left: .25rem;
+  font-size: 1.25rem;
+  color: #333;
+}

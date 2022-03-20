@@ -5,7 +5,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Website</title>
+    <title>Portfolio Website</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="./css/card.css" />
   </head>
   <body>
-  <main>
+    <main>
       <header id="header">
         <div class="overlay overlay-lg">
           <img src="./img/shapes/square.png" class="shape square" alt="" />
@@ -41,7 +41,6 @@
           <img src="./img/shapes/points1.png" class="points points1" alt="" />
         </div>
 
-
         <nav>
           <div class="container">
             <div class="logo">
@@ -53,9 +52,11 @@
               <ul>
                 
                 <li>
-                <a href="http://localhost/web/2index.ph">home</a>
+                  
                 </li>
-               
+                <li>
+                  <a href="http://localhost/web/2index.ph">home</a>
+                </li>
                 <li>
                   <a href="http://localhost/web/login.php">login</a>
                 </li>
@@ -71,43 +72,49 @@
           </div>
         </nav>
 
-
-        <div class="header-content">
-          <div class="container grid-2">
-            <div class="column-1">
-              <h3 class="header-title">เว็บไซต์ระบบสารสนเทศวิชาโครงการและวิชาโครงงาน แผนกเทคโนโลยีธุรกิจดิจิทัล</h3>
-              <p class="text">
-               แหล่งรวบร่วมวิชาโครงการและวิชาโครงงานของนักศึกษา<br>ในแผนกเทคโนโลยีธุรกิจดิจิทัลวิทยาลัยอาชีวศึกษานครศรีธรรมราช   </p>
-
-               
-               <a href="http://localhost/web/allProjet.php" class="btn"> โครงงานทั้งหมด</a>
-             
         
-            </div>
-
-            <div class="column-2 image">
-              <img
-                
-                class="points points2"
-                alt=""
-              />
-              <img src="./img/1.png" class="img-element z-index" alt="" />
-            </div>
-          </div>
-        </div>
-      </header>
-      
 
  
-      <div class = "cce">  <div class="section-header">
-            <h2 class="title" >ตัวอย่างโครงการและโครงงาน</h2>
+      <div class = "cce" >  <div class="section-header">
+            <h3 class="title" >โครงการและโครงงาน</h3>
             <p class="text">
+             
             </p>
           </div></div>
+<form  class="ac" action="search.php" method="get" enctype="multipart/form-data" id ="project">
+    <div class="container">
+    <div class ="pes">
+    <div class="input-wrapper">
+                <input type="text" placeholder="Search" />
+                <button type="submit" name="search" value="search" class="search">
+                <p3>SEARCH</p3>
+</button >
+              
+      
+    </div>
+    </div>
+  
+</form>
+     
+
       <section class="blog section">
         <div class="container">
           
         <section class="card-container">
+        <?php 
+            
+            $select_posts = "SELECT * FROM posts";
+
+            $run_posts = mysqli_query($conn, $select_posts);
+
+            while ($row = mysqli_fetch_array($run_posts)) {
+                $post_id = $row['post_id'];
+                $post_date = $row['post_date'];
+                $post_author = $row['post_author'];
+                $post_title = $row['post_title'];
+                $post_image = $row['post_image'];
+                $post_content = substr($row['post_content'], 0, 300);               
+        ?>
       
         <div class="card">
         
@@ -115,24 +122,24 @@
                 <a href=""><img width="640" height="360"src="./img/<?php echo $post_image; ?>"></a>
             </div>
             <div class="card-content">
-                <h6 class="tag tag-travel">ssss</2h></h6>
-                
-                <p class="description">ssssc</p>
-                   <p class="post-meta">Posted By 1111 <br> Published on <strong>11111</strong>
+                <h6 class="tag tag-travel"><h2><?php echo $post_title; ?></2h></h6>
+                <a href=""></a>
+                <p><?php echo $post_content; ?></p>
+                <p class="description"><?php echo $post_content; ?></p>
+                   <p class="post-meta">Posted By <strong><?php echo $post_author; ?></strong> <br> Published on <strong><?php echo $post_date; ?></strong>
                     <div class="ff"> 
-                   <a class="aaa"  href="pages.php?id=<?php echo $post_id; ?>" >ดูเพิ่มเติม</a></br>
+                   <a class="aaa"  href="pages.php?id=<?php echo $post_id; ?>" >Read More</a></br>
                      </div>
             </div>
         </div>
-      
+        <?php } ?>
+
         </div>
       </section> 
      
 
      
     </main>
-
-    
     <footer class="footer">
       <div class="container">
         <div class="grid-4">
