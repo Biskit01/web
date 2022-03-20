@@ -1,11 +1,11 @@
 
-<?php require_once"connect.php" ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
+    <title>Website</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
@@ -14,11 +14,15 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="VP2.css" ></link>
     <link rel="stylesheet" href="./css/card.css" />
+  	<link rel="stylesheet" href="VP.css" >
+    <link rel="stylesheet" href="css/ggg.css">
+    <link rel="stylesheet"  href="min.css">
+	
   </head>
   <body>
-    <main>
+  <main>
       <header id="header">
         <div class="overlay overlay-lg">
           <img src="./img/shapes/square.png" class="shape square" alt="" />
@@ -41,6 +45,7 @@
           <img src="./img/shapes/points1.png" class="points points1" alt="" />
         </div>
 
+
         <nav>
           <div class="container">
             <div class="logo">
@@ -52,11 +57,9 @@
               <ul>
                 
                 <li>
-                  
+                <a href="http://localhost/web/2index.ph">home</a>
                 </li>
-                <li>
-                  <a href="http://localhost/web/2index.ph">home</a>
-                </li>
+               
                 <li>
                   <a href="http://localhost/web/login.php">login</a>
                 </li>
@@ -72,82 +75,66 @@
           </div>
         </nav>
 
+
+        <div class="header-content">
+          <div class="container grid-3">
+            <section class="profile_container">
+				<div class="profile_img_section">
+					<img class="profile_img-LG" src="img/blank-profile-picture-g1e452dd5f_1280.png" />
+					<div class="flag_wrapper">
+						
+					</div>
+				</div>
         
-
- 
-      <div class = "cce" >  <div class="section-header">
-            <h3 class="title" >โครงการและโครงงาน</h3>
-            <p class="text">
-             
-            </p>
-          </div></div>
-
-          
-       
-
-<form  class="ac" action="search.php" method="get" enctype="multipart/form-data" >
-    <div class="container">
-    <div class ="pes">
-    <div class="input-wrapper">
-                <input type="text" placeholder="Search" name="value" />
-                <button type="submit" name="search" value="search" class="search">
-                <p3>SEARCH</p3>
-</button >
-              
-      
-    </div>
-    </div>
-  
-</form> 
-      
-
-      <section class="blog section">
+			
+				<div class="profile_desc_section">
+					<h2>ชื่อโครงงาน</h2>
+				
+				
+				</div>
+			
+			</section>
+			
+			<div class="info">
+				
+			</div>
+          </div>
+        </div>
+        
+      </header>
+<body>
+<section class="blog section">
         <div class="container">
           
         <section class="card-container">
-        <?php 
-            
-            $select_posts = "SELECT * FROM posts";
-
-            $run_posts = mysqli_query($conn, $select_posts);
-
-            while ($row = mysqli_fetch_array($run_posts)) {
-                $post_id = $row['post_id'];
-                $post_date = $row['post_date'];
-                $post_author = $row['post_author'];
-                $post_title = $row['post_title'];
-                $post_image = $row['post_image'];
-                $post_class =$row['post_class'];
-                $post_content = substr($row['post_content'], 0, 100);               
-        ?>
       
         <div class="card">
-        
-            <div class="card-top">
-                <a href=""><img width="640" height="360"src="./img/<?php echo $post_image; ?>"></a>
-            </div>
-            <div class="card-content">
-                <h6 class="tag tag-travel"><h2><?php echo $post_title; ?></2h></h6>
-                <a href=""></a>
-                <p><?php echo $post_content; ?></p>
-                <p class="description"><?php echo $post_content; ?></p>
-                   <p class="post-meta">Posted By <strong><?php echo $post_author; ?></strong> <br> Published on <strong><?php echo $post_date; ?></strong>
-                    <div class="ff"> 
-                      <p> class <?php echo $post_class; ?></p>
-                   <a class="aaa"  href="pages.php?id=<?php echo $post_id; ?>" >Read More</a></br>
-                     </div>
-            </div>
-        </div>
-        <?php } ?>
+        <div class="dd">
+<section class="animator animator--dark">
+    <div class="content">
+        <h1>Sea of Tranquility</h1>
+        <p>Billions upon billions astonishment muse about. Ship of the imagination light years galaxies, decipherment? Tesseract the only home we've ever known cosmic ocean, Hypatia courage of our questions, gathered by gravity Sea of Tranquility made in the interiors of collapsing stars. Paroxysm of global death hearts of the stars, Tunguska event another world astonishment, the carbon in our apple pies permanence of the stars ship of the imagination.</p>
+    </div>
+</section>
 
+<section class="animator animator--light">
+    <div class="content">
+        <h1>Sea of Tranquility</h1>
+        <p>Billions upon billions astonishment muse about. Ship of the imagination light years galaxies, decipherment? Tesseract the only home we've ever known cosmic ocean, Hypatia courage of our questions, gathered by gravity Sea of Tranquility made in the interiors of collapsing stars. Paroxysm of global death hearts of the stars, Tunguska event another world astonishment, the carbon in our apple pies permanence of the stars ship of the imagination.</p>
+    </div>
+</section>
+</body>
+</div >
+           
+      
         </div>
       </section> 
      
 
-     
-    </main>
-    <footer class="footer">
-      <div class="container">
+      <footer class="footer">
+      
+
+      <div class="container1">
         <div class="grid-4">
           <div class="grid-4-col footer-about">
             <h3 class="title-sm"></h3>
@@ -197,7 +184,7 @@
           </div>
         </div>
       </div>
-    </footer>
+    </footer>7
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/isotope.pkgd.min.js"></script>

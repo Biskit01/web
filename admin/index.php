@@ -36,7 +36,7 @@
             <div class="sidebar">
                 <h1>Welcome : </h1>
                 <div class ="aaa">
-                   <button class="ll" <input type="button" onclick="window.location.href='index.php'" value="link_text">Home</button>
+                   <button class="ll" <input type="button" onclick="window.location.href='localhost/web/2index.php' value="link_text">Home</button>
                 </div>
                 <div class ="aaa">
                    <button class="ll"<input type="button" onclick="window.location.href='view_posts.php'" value="link_text">view Posts</button>

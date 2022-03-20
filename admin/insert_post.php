@@ -14,7 +14,7 @@
         $post_title = $_POST['title'];
         $post_date = date('y-m-d');
         $post_author = $_POST['author'];
-        $post_keywords = $_POST['keywords'];
+        $post_class = $_POST['class'];
         $post_content = $_POST['content'];
         $post_image = $_FILES['image']['name'];
         $image_tmp = $_FILES['name']['tmp_name'];
@@ -93,8 +93,8 @@
                     </tr>
                     
                     <tr>
-                        <td>Post Keywords</td>
-                        <td><input type="text" name="keywords" size="50"></td>
+                        <td>Post Class</td>
+                        <td><input type="text" name="Class" size="50"></td>
                     </tr>
                    
                     <tr>

@@ -81,21 +81,27 @@
              
             </p>
           </div></div>
-          <form  class="ac" action="SEARCindex.php" method="get" enctype="multipart/form-data">
+
+
+  
+<form  class="ac" action="search.php" method="get" enctype="multipart/form-data" >
     <div class="container">
     <div class ="pes">
     <div class="input-wrapper">
-                <input type="text" placeholder="Search" />
-                <button  type="submit" name="search" value="ค้นหา" class="search" >
-                <a href="#project" >SEARCH</a>
-                
+                <input type="text" placeholder="Search" name="value" />
+                <button type="submit" name="search" value="search" class="search">
+                <p3>SEARCH</p3>
 </button >
-              </div>
+              
       
     </div>
     </div>
   
-</form>
+</form> 
+
+
+      
+
 
       <section class="blog section">
         <div class="container">
@@ -103,36 +109,51 @@
         <section class="card-container">
         <?php 
             
-            $select_posts = "SELECT * FROM posts";
+            if (isset($_GET['search'])) {
+              $search_value = $_REQUEST['value'];
+          }
 
-            $run_posts = mysqli_query($conn, $select_posts);
+          if (empty($search_value)) {
+              echo "<h3 style='margin-top: 2rem; text-align: center; color: red;'>Oops!!, can not find any data</h3>";
+          } else {
+              $search_query = "SELECT * FROM posts WHERE post_keywords LIKE '%$search_value%' OR post_title LIKE '%$search_value%'OR post_date LIKE '%$search_value%' ";
+ 
+              $run_query = mysqli_query($conn, $search_query);
 
-            while ($row = mysqli_fetch_array($run_posts)) {
-                $post_id = $row['post_id'];
-                $post_date = $row['post_date'];
-                $post_author = $row['post_author'];
-                $post_title = $row['post_title'];
-                $post_image = $row['post_image'];
-                $post_content = substr($row['post_content'], 0, 300);               
-        ?>
+              while ($search_row = mysqli_fetch_array($run_query)) {
+                  $post_id = $search_row['post_id'];
+                  $post_author = $search_row['post_author'];
+                  $post_date = date('y-m-d');
+                  $post_title = $search_row['post_title'];
+                  $post_image = $search_row['post_image'];
+                  $post_content = substr($search_row['post_content'], 0, 150);
+
       
-        <div class="card">
+      ?>
+      
+      <div class="card">
         
-            <div class="card-top">
-                <a href=""><img width="640" height="360"src="./img/<?php echo $post_image; ?>"></a>
-            </div>
-            <div class="card-content">
-                <h6 class="tag tag-travel"><h2><?php echo $post_title; ?></2h></h6>
-                <a href=""></a>
-                <p><?php echo $post_content; ?></p>
-                <p class="description"><?php echo $post_content; ?></p>
-                   <p class="post-meta">Posted By <strong><?php echo $post_author; ?></strong> <br> Published on <strong><?php echo $post_date; ?></strong>
-                    <div class="ff"> 
-                   <a class="aaa"  href="pages.php?id=<?php echo $post_id; ?>" >Read More</a></br>
-                     </div>
-            </div>
+        <div class="card-top">
+            <a href=""><img width="640" height="360"src="./img/<?php echo $post_image; ?>"></a>
         </div>
-        <?php } ?>
+        <div class="card-content">
+            <h6 class="tag tag-travel"><h2><?php echo $post_title; ?></2h></h6>
+            <a href=""></a>
+            <p><?php echo $post_content; ?></p>
+            <p class="description"><?php echo $post_content; ?></p>
+               <p class="post-meta">Posted By <strong><?php echo $post_author; ?></strong> <br> Published on <strong><?php echo $post_date; ?></strong>
+                <div class="ff"> 
+               <a class="aaa"  href="pages.php?id=<?php echo $post_id; ?>" >Read More</a></br>
+                 </div>
+        </div>
+    </div>
+      <?php 
+    
+    }
+    
+    }
+    
+    ?>
 
         </div>
       </section> 
