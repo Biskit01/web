@@ -76,89 +76,65 @@
 
  
       <div class = "cce" >  <div class="section-header">
-            <h3 class="title" >โครงการและโครงงาน</h3>
+            <h3 class="title" >ค้นหาโครงการและโครงงาน</h3>
             <p class="text">
              
             </p>
           </div></div>
 
-        
-      
-<form  class="ac" action="search.php" method="get" enctype="multipart/form-data" >
+
   
-    <div class="container">
-    <div class ="pes">
-    <div class="input-wrapper">
-                <input type="text" placeholder="Search" name="value" />
-                <button type="submit" name="search" value="search" class="search">
 
-                <p3>SEARCH</p3>
-           
-</button >
 
-      
-    </div>
-    
-   
 
-    </div>
- 
-  
-</form> 
-     
-
-<section class="blog section">
+      <section class="blog section">
         <div class="container">
-        <div class ="wwww">
-<select id="country" name="country"class="eee">
-      <option value="australia">เลือกระดับชั่น.</option>
-      <option value="canada"><button type="submit" name="search" value="search" class="search">ปวช.</button></option>
-      <option value="usa">ปวส.</option>
-    </select>
-</div >
-        <section class="card-container">
           
-        <?php 
-            
-            $select_posts = "SELECT * FROM posts";
-
-            $run_posts = mysqli_query($conn, $select_posts);
-
-            while ($row = mysqli_fetch_array($run_posts)) {
-                $post_id = $row['post_id'];
-                $post_date = $row['post_date'];
-                $post_author = $row['post_author'];
-                $post_title = $row['post_title'];
-                $post_image = $row['post_image'];
-                $post_class =$row['post_class'];
-                $post_content = substr($row['post_content'], 0, 100);               
-        ?>
-      
-        <div class="card">
         
-            <div class="card-top">
-                <a href=""><img width="640" height="360"src="./img/<?php echo $post_image; ?>"></a>
-            </div>
-            <div class="card-content">
-                <h6 class="tag tag-travel"><h2><?php echo $post_title; ?></2h></h6>
-                <a href=""></a>
-                <p><?php echo $post_content; ?></p>
-                <p class="description"><?php echo $post_content; ?></p>
-                   <p class="post-meta">Posted By <strong><?php echo $post_author; ?></strong> <br> Published on <strong><?php echo $post_date; ?></strong>
-                    <div class="ff"> 
-                      <p> class <?php echo $post_class; ?></p>
-                   <a class="aaa"  href="pages.php?id=<?php echo $post_id; ?>" >Read More</a></br>
-                     </div>
-            </div>
+        <section class="card-container">
+        <?php
+                echo '<font color="red">';   
+                echo $_GET['q'];
+                echo '</font>';
+                echo '<br/>';             
+                $sql = "SELECT * FROM tbl_search
+                    WHERE post_title LIKE '%$q%' OR post_conte LIKE '%$q%'
+                 ORDER BY id DESC";
+                $result = mysqli_query($con, $sql);
+                while($row = mysqli_fetch_array($result)) {
+                                    
+                ?>
+                <div class="card">
+        
+        <div class="card-top">
+            <a href=""><img width="640" height="360"src="./img/<?php echo $post_image; ?>"></a>
         </div>
-        <?php } ?>
+        <div class="card-content">
+            <h6 class="tag tag-travel"><h2><?php echo $post_title; ?></2h></h6>
+            <a href=""></a>
+            <p><?php echo $post_content; ?></p>
+            <p class="description"><?php echo $post_content; ?></p>
+               <p class="post-meta">Posted By <strong><?php echo $post_author; ?></strong> <br> Published on <strong><?php echo $post_date; ?></strong>
+                <div class="ff"> 
+               <a class="aaa"  href="pages.php?id=<?php echo $post_id; ?>" >Read More</a></br>
+                 </div>
+        </div>
+    </div>
+            <?php } ?>
 
+
+
+
+        
+       
         </div>
       </section> 
      
 
      
     </main>
+
+    
     <footer class="footer">
       <div class="container">
         <div class="grid-4">
